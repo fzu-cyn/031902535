@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.*;
 
 public class Check {
-    // public Check(){}
     public static List<output> list = new ArrayList<output>();
     //定义集合List来保存output对象
     public static long sum = 0;//敏感词总数
@@ -12,42 +11,20 @@ public class Check {
     private Map Mapss = null;
     public static int min = 1;//最小匹配规则
     public static int max = 2;//最大匹配规则
-    private static final String ENCODING = "utf-8";
+    private static final String ENCODING = "UTF-8";//将格式定为UTF-8
+    public static String pathname;
 
-    private static String replaceString = null;
-
-    public static String readToString(String fileName) throws IOException {
-        //String encoding = "UTF-8";
-        File filetxt = new File(fileName);
-        Long filelength = filetxt.length();
-        byte[] filecontent = new byte[filelength.intValue()];
-        //System.out.println();
-        FileInputStream in = new FileInputStream(filetxt);
-        try {
-            in.read(filecontent);
-            return new String(filecontent, ENCODING);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            in.close();
-        }
-    }//实现一次性读入待检测文本
      public static void main(String[] args) throws IOException {
-         Check Sensitive = new Check();
-       //  System.out.println("敏感词的数量：" + Sensitive.Mapss.size());
+         pathname = args[0];//传入敏感词文件路径
+         Check Sensitive = new Check(pathname);//将pathname通过构造函数传参，否则pathname默认null，会抛出空指针异常
          //读入待检测文本
-        //String txt = readToString("C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\org.txt");
-        //Set<String> word = Sensitive.getWord(txt,1);//获取文本中的敏感词
-
          try {
              BufferedReader br = new BufferedReader(
                      new InputStreamReader(
-                             new FileInputStream("C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\org.txt")));
+                             new FileInputStream(args[1]),ENCODING));//args[1]传入待检测文本路径
              String linestr;//按行读取 将每次读取一行的结果赋值给linestr
              while ((linestr = br.readLine()) != null) {
                  Set<String> word = Sensitive.getWord(linestr,1);//获取文本中的敏感词
-                 //System.out.println(word);
                  line++;//行数增加
              }
              br.close();//关闭IO
@@ -57,25 +34,26 @@ public class Check {
          }
          Collections.sort(list);
         // 输出到文本
-         File fileout = new File("C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\ans.txt");//修改后缀可生成相应类型文件
+         //args[2]传入输出文本路径
+         File fileout = new File(args[2]);//修改后缀可生成相应类型文件
          try{
              if(!fileout.exists()) fileout.createNewFile();//文件不存在，创建文件
-             BufferedWriter bw = new BufferedWriter(new FileWriter(fileout));
-             String str = "Total:"+sum+'\n';
-             bw.write(str);
-             char str3 = '\n';
-             for(int i=0;i<sum;i++){
+             BufferedWriter bw = new BufferedWriter(new FileWriter(fileout));//缓冲流
+             String str = "Total:"+sum+'\n';//定义str字符串，用来将Total传入文本
+             bw.write(str);//将str输出到文本
+             char str3 = '\n';//输出到换行符
+             for(int i=0;i<sum;i++){//输出之前存在list集合中元素到文本中
                  bw.write(list.get(i).toString());
-                 bw.write(str3);
+                 bw.write(str3);//换行
              }
-             bw.close();
+             bw.close();//关闭
          }catch(IOException e){
              e.printStackTrace();
      }
     }
      //构造函数，初始化敏感词词库
-    public Check(){
-        Mapss = new Filter().lexicon();
+    public Check(String pathname){
+        Mapss = new Filter(pathname).lexicon(pathname);
     }
 
     //▲实现输出敏感词+所在行数
@@ -88,8 +66,6 @@ public class Check {
             if(len>0){
                 //如果存在，加入wordlist
                 list.add(new output(line,i, txt.substring(i,i+len),txt.substring(i,i+len)));
-                //System.out.println("Sum"+sum);
-                //System.out.println(txt.substring(i,i+len));//敏感词
                 wordlist.add(txt.substring(i,i+len));
                 i=i+len-1;
             }
@@ -110,8 +86,7 @@ public class Check {
                 flag++;
                 if("1".equals(New.get("isEnd"))){
                     leaf = true;
-                    sum++;
-                    //System.out.println(sensitiveword);
+                    sum++;//敏感词总数自加1
                     if(Check.min==type) break;
                 }
             }
@@ -151,6 +126,7 @@ public class Check {
             return t.toString();
         }
 
+        //get、set方法
         public int getLocation() {
             return location;
         }

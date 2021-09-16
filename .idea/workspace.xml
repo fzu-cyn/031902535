@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Filter:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9ba3cd22-f102-41cd-a044-04de84e34eeb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,13 +24,17 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/下载/simple-sensitive-words-util-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,6 +52,7 @@
     <configuration name="Check" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Check" />
       <module name="Filter" />
+      <option name="PROGRAM_PARAMETERS" value="C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\words.txt C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\org.txt C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\ans.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.company.*" />
@@ -89,6 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Check" />
+      <item itemvalue="Application.Filter" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.ReadInText" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Check" />
@@ -113,7 +129,11 @@
       <workItem from="1631347524747" duration="4320000" />
       <workItem from="1631503826431" duration="9237000" />
       <workItem from="1631607796412" duration="6782000" />
-      <workItem from="1631692364511" duration="11885000" />
+      <workItem from="1631692364511" duration="12791000" />
+      <workItem from="1631779368218" duration="73000" />
+      <workItem from="1631779477606" duration="604000" />
+      <workItem from="1631781244789" duration="60000" />
+      <workItem from="1631781334509" duration="13124000" />
     </task>
     <servers />
   </component>

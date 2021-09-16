@@ -5,15 +5,18 @@ import java.util.*;
 
 public class Filter {
 
-    private static final String ENCODING = "utf-8";
+    private static final String ENCODING = "UTF-8";//将格式定为UTF-8
     public HashMap Mapss;
+    public String pathname ;
 
-    public Filter(){}
+    public Filter(String pathname) {
+        this.pathname=pathname;
+    }//构造函数
 
-    private Set<String> Words() throws Exception{
+    private Set<String> Words(String pathnamess) throws Exception{
         Set<String> word = null;
         //读取文件
-        File filein = new File("C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\words.txt");
+        File filein = new File(pathnamess);
         //创建输入流,此时读取的是文件的字节流，in.read()读取的是字节
         InputStream in = new FileInputStream(filein);//InputStreamReader 做的操作是将字节流转换成字符流
         InputStreamReader read = new InputStreamReader(in,ENCODING);//创建一个read的字符留缓冲区，将字符装载入缓冲区中
@@ -43,10 +46,9 @@ public class Filter {
     }
 
     //初始化词库，将敏感词加入到HashMap中
-    public Map lexicon(){
+    public Map lexicon(String pathnames){
         try{
-            Set<String> SensitiveWords = Words();//读取敏感词词库
-           // System.out.println(SensitiveWords);
+            Set<String> SensitiveWords = Words(pathnames);//读取敏感词词库
             AddToLexicon(SensitiveWords);//将敏感词词库加入到HashMap中
         } catch (Exception e) {
             e.printStackTrace();
