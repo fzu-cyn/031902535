@@ -14,44 +14,44 @@ public class Check {
     private static final String ENCODING = "UTF-8";//将格式定为UTF-8
     public static String pathname;
 
-     public static void main(String[] args) throws IOException {
-         pathname = args[0];//传入敏感词文件路径
-         Check Sensitive = new Check(pathname);//将pathname通过构造函数传参，否则pathname默认null，会抛出空指针异常
-         //读入待检测文本
-         try {
-             BufferedReader br = new BufferedReader(
-                     new InputStreamReader(
-                             new FileInputStream(args[1]),ENCODING));//args[1]传入待检测文本路径
-             String linestr;//按行读取 将每次读取一行的结果赋值给linestr
-             while ((linestr = br.readLine()) != null) {
-                 Set<String> word = Sensitive.getWord(linestr,1);//获取文本中的敏感词
-                 line++;//行数增加
-             }
-             br.close();//关闭IO
-         } catch (Exception e) {
-             System.out.println("文件操作失败");
-             e.printStackTrace();
-         }
-         Collections.sort(list);
+    public static void main(String[] args) throws IOException {
+        pathname = args[0];//传入敏感词文件路径
+        Check Sensitive = new Check(pathname);//将pathname通过构造函数传参，否则pathname默认null，会抛出空指针异常
+        //读入待检测文本
+        try {
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(args[1]),ENCODING));//args[1]传入待检测文本路径
+            String linestr;//按行读取 将每次读取一行的结果赋值给linestr
+            while ((linestr = br.readLine()) != null) {
+                Set<String> word = Sensitive.getWord(linestr,1);//获取文本中的敏感词
+                line++;//行数增加
+            }
+            br.close();//关闭IO
+        } catch (Exception e) {
+            System.out.println("文件操作失败");
+            e.printStackTrace();
+        }
+        Collections.sort(list);
         // 输出到文本
-         //args[2]传入输出文本路径
-         File fileout = new File(args[2]);//修改后缀可生成相应类型文件
-         try{
-             if(!fileout.exists()) fileout.createNewFile();//文件不存在，创建文件
-             BufferedWriter bw = new BufferedWriter(new FileWriter(fileout));//缓冲流
-             String str = "Total:"+sum+'\n';//定义str字符串，用来将Total传入文本
-             bw.write(str);//将str输出到文本
-             char str3 = '\n';//输出到换行符
-             for(int i=0;i<sum;i++){//输出之前存在list集合中元素到文本中
-                 bw.write(list.get(i).toString());
-                 bw.write(str3);//换行
-             }
-             bw.close();//关闭
-         }catch(IOException e){
-             e.printStackTrace();
-     }
+        //args[2]传入输出文本路径
+        File fileout = new File(args[2]);//修改后缀可生成相应类型文件
+        try{
+            if(!fileout.exists()) fileout.createNewFile();//文件不存在，创建文件
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileout));//缓冲流
+            String str = "Total:"+sum+'\n';//定义str字符串，用来将Total传入文本
+            bw.write(str);//将str输出到文本
+            char str3 = '\n';//输出到换行符
+            for(int i=0;i<sum;i++){//输出之前存在list集合中元素到文本中
+                bw.write(list.get(i).toString());
+                bw.write(str3);//换行
+            }
+            bw.close();//关闭
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
-     //构造函数，初始化敏感词词库
+    //构造函数，初始化敏感词词库
     public Check(String pathname){
         Mapss = new Filter(pathname).lexicon(pathname);
     }

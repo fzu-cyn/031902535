@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="Filter:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ba3cd22-f102-41cd-a044-04de84e34eeb" name="Default Changelist" comment="" />
+    <list default="true" id="ae99d541-1f43-486f-8ec7-bee4264a0818" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,21 +15,13 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1xuL5FhytZ2xBoJlGHBLT1ZLAcg" />
+  <component name="ProjectId" id="1zDkd20KpTddsc1Du2HVrxwyGSL" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,37 +35,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Check">
-    <configuration name="Check" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Check" />
-      <module name="Filter" />
-      <option name="PROGRAM_PARAMETERS" value="C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\words.txt C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\org.txt C:\\Users\\陈玉娜\\IdeaProjects\\Filter\\ans.txt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Filter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Filter" />
-      <module name="Filter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="Filter" />
+      <module name="main" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -86,54 +46,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadInText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.ReadInText" />
-      <module name="Filter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Check" />
-      <item itemvalue="Application.Filter" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.ReadInText" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Check" />
-        <item itemvalue="Application.ReadInText" />
-        <item itemvalue="Application.Filter" />
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9ba3cd22-f102-41cd-a044-04de84e34eeb" name="Default Changelist" comment="" />
-      <created>1631199841656</created>
+      <changelist id="ae99d541-1f43-486f-8ec7-bee4264a0818" name="Default Changelist" comment="" />
+      <created>1633690130101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631199841656</updated>
-      <workItem from="1631199845449" duration="784000" />
-      <workItem from="1631276885279" duration="5945000" />
-      <workItem from="1631347524747" duration="4320000" />
-      <workItem from="1631503826431" duration="9237000" />
-      <workItem from="1631607796412" duration="6782000" />
-      <workItem from="1631692364511" duration="12791000" />
-      <workItem from="1631779368218" duration="73000" />
-      <workItem from="1631779477606" duration="604000" />
-      <workItem from="1631781244789" duration="60000" />
-      <workItem from="1631781334509" duration="13124000" />
+      <updated>1633690130101</updated>
+      <workItem from="1633690133280" duration="376000" />
     </task>
     <servers />
   </component>
