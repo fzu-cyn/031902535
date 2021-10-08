@@ -38,7 +38,11 @@ public class Check {
         File fileout = new File(args[2]);//修改后缀可生成相应类型文件
         try{
             if(!fileout.exists()) fileout.createNewFile();//文件不存在，创建文件
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileout));//缓冲流
+            FileOutputStream fos = new FileOutputStream(fileout);
+            //FilterOutputStream fos = new FilterOutputStream(fileout);
+            OutputStreamWriter osw = new OutputStreamWriter(fos,"UTF-8");
+            BufferedWriter bw = new BufferedWriter(osw);
+           // BufferedWriter bw = new BufferedWriter(new FileWriter(fileout));//缓冲流
             String str = "Total:"+sum+'\n';//定义str字符串，用来将Total传入文本
             bw.write(str);//将str输出到文本
             char str3 = '\n';//输出到换行符
